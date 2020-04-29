@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <style>
+                     body, html {
+
+background-image: url(back.png); background-size: cover; height:100vh; background-repeat: no-repeat ;
+}
+
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family:  Helvetica;
+}
+.main
+{
+ width: 500px;
+ margin: 50px auto;
+ border: 3px solid#dc143c;
+ border-radius: 10px;
+ background-color: #fffaf0;
+ border-left: 40px solid#dc143c;
+ box-shadow: 2px 2px 10px #000;
+}
+
+.info
+{
+ width: 100%;
+ padding: 8px;
+ background-color: #dc143c;
+ font-size: 20px;
+ font-weight: bold;
+ text-align: center;
+ color: #fff;
+ text-shadow: 1px 1px 2px #000;
+}
+ 
+.form-box
+{
+       padding: 25px;
+}
+
+label
+{
+ color: navy;
+ font-size: 20px;
+}
+
+input
+{
+ width: 100%;
+ padding: 10px;
+ border-right: 20px solid #dc143c;
+ border-left: 20px solid #dc143c;
+ border-radius: 5px;
+}
+
+.input, #msg-box
+{
+ width: 100%;
+ padding: 10px;
+ margin-bottom: 5px;
+ margin-top: 3px;
+ border: 2px solid #dc143c;
+ border-radius: 5px;
+ font-weight: bold;
+ border-right: 20px solid #dc143c;
+ border-left: 20px solid #dc143c;
+ color: navy;
+}
+
+.inp:focus, #msg-box:focus
+{
+ outline: none;
+ border: 2px solid navy;
+ border-right: 20px solid navy;
+ border-left: 20px solid navy;
+}
+
+#msg-box
+{
+ resize: none;
+ height: 80px;
+}
+
+.sub-btn
+{
+ width: 100%;
+ padding: 10px;
+ margin-top: 5px;
+ border: none;
+ border-radius: 5px;
+ background: linear-gradient(#dc143c, #800000);
+ color: #fff;
+ font-size: 20px;
+ cursor: pointer;
+}
+
+.sub-btn:focus
+{
+ outline: none;
+}
+
+.footer
+ {
+ position: fixed;
+ left: 0;
+ bottom: 0;
+ width: 100%;
+ background-color:black;
+ color: white;
+ text-align: center;}
+
+.social-icons
+{
+ width: 60px;
+ height: 40px;
+}
+
+.sub-btn:hover
+{
+ background: linear-gradient( #800000,#dc143c);
+ transition: all ease-out 0.2s;
+ opacity: 0.9;
+ filter: alpha(opacity=10);
+}
+
+@media(max-width: 720px)
+{
+.main{
+ width: 90%;
+ }
+}
+</style>
+
+           <!--responsiveness-->
+               <meta name="viewport" content="width=device-width, initial-scale=1">
+                   <title>CONTACT page</title>
+                   <link rel="stylesheet" href="style.css">
+                           <script src="script.js"></script>
+                                      </head>
+                                      <!--social icons-->
+                                             <div class="socialIcons">
+                                                    <a href="https://www.facebook.com/mziwenkosi.ngonyama.7"><img src="facebook.png" style="width:2%;height:2%;"> 
+                                                                 <a href="https://www.linkedin.com/in/mziwenkosi-ngonyama-851674189/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BBqBBPtTnQRa9nX0hsJgUPQ%3D%3D"><img src="linkedin.png" style="width:2%;height:2%;"> 
+                                                                       <img src="instagram.png" style="width: 2%;height: 2%;">
+                                                                              <img src="twitter.png" style="width: 2%;height: 2%;">
+                                                                                         </div>
+                                                                                   <!--top nav-->
+                                                                                <div class="topnav">
+                                                                        <a href="contact.html">Contact</a>
+                                                                <a href="about.html">About</a>
+                                                             <a href="home.html">Home</a>
+                                                            </div><br><br>
+   
+                                                   <body>
+                                                          <!--contact form-->
+                                          <div class="main">
+                             <div class="info">Give Your Feedback</div>
+                     <form action="https://getform.io/f/fedf8a04-89f0-45fc-bee8-2cb823872b8a" method="POST" name="form" class="form-box">
+               <label for="name">Name</label><br>
+        <input type="text" name="name" class="inp" placeholder="Enter Your Name" required><br><br>
+   <label for="email">Email ID</label><br> 
+               <input type="email" name="email" class="inp" placeholder="Enter Your Email" required><br><br>
+                      <label for="Phone">Phone</label><br> 
+                             <input type="tel" name="phone" class="inp" placeholder="Enter Your Phone" required><br><br>
+                                     <label for="message">Message</label><br> 
+                                           <textarea name="msg" id="msg-box" placeholder="Enter your message..."></textarea><br><br>
+                                                <input type="submit" value="SEND" class="sub-btn">
+                                                     </form>
+
+                                                     <!--javascrispt-->
+                                            <script>
+                              import {onMount} from 'svelte';
+                      onMount(() =>{
+         const fromElement =document.querySelector('#contact-form')
+fromElement.addEventListener('submit', (event) =>{
+          enent.preventdefault();
+                 const data = new URLSearchParams(new FormData(formElement));
+                      fetch('https://getform.io/f/fedf8a04-89f0-45fc-bee8-2cb823872b8a',{
+                             method= 'post',
+                                   body:data
+                                         });
+                                       alert('than you for submitting, i will contact you soon!')
+                                    })
+                              })
+                      </script>
+               <div class="footer">
+        <a href="https://satellites.pro/Khayelitsha_map#"> <img src="direction.png" class="social-icons">
+       </div>
+ </body>
+  </html>
